@@ -21,4 +21,44 @@ GUI로 구성된 도서 관리 프로그램
 	* 반납 -> 검수 
 	* 검수 -> 준비
 	
+
+## 설계
+### 도서 등록, 수정, 삭제, 조회 - com.codefty.library.book 
+```java
+package com.codefty.library.book;
+
+public abstract class BookAction {
+	/**
+	 * 도서 등록
+	 * @param book
+	 */
+	public abstract void register(Book book);
 	
+	/**
+	 * 도서 정보 수정
+	 * @param book
+	 */
+	public abstract void update(Book book);
+	
+	/**
+	 * 도서 정보 삭제
+	 * @param book
+	 */
+	public abstract void delete(Book book);
+	
+	/**
+	 * 도서 정보 조회 
+	 * 
+	 * @param serialNum : 도서 일련번호 
+	 */
+	public abstract Book get(long serialNum);
+}
+```
+
+
+
+
+
+
+
+
