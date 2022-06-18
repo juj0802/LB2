@@ -12,4 +12,17 @@ public abstract class BookAction {
 	 * @param book
 	 */
 	public abstract void update(Book book);
+	
+	/**
+	 * 도서 정보 삭제
+	 * @param book
+	 */
+	public abstract void delete(Book book);
+	
+	/**
+	 * 도서 정보 조회 
+	 * 
+	 * @param serialNum : 도서 일련번호 
+	 */
+	public abstract Book get(long serialNum);
 }

@@ -23,10 +23,9 @@ GUI로 구성된 도서 관리 프로그램
 	
 
 ## 설계
-### 도서 등록, 수정, 삭제, 조회 - com.codefty.library.book 
+### com.codefty.library.book : 도서 등록, 수정, 삭제, 조회
 ```java
 package com.codefty.library.book;
-
 public abstract class BookAction {
 	/**
 	 * 도서 등록
@@ -54,8 +53,35 @@ public abstract class BookAction {
 	public abstract Book get(long serialNum);
 }
 ```
+- Book : DTO(Data Transfer Object)
+- BookDao : (Data Access Object) - 직접 파일에 접근해서 조회, 저장
+- BookService : 등록, 수정, 삭제 등의 기능을 수행
 
+### com.codefty.libary.common : 공통 기능, 상수 
+- 도서 대여상태 
+```java
+public enum RentalStatus {
+	READY,
+	RENTAL,
+	RETURN ,
+	CHECKING,
+}
+```
 
+### com.codefty.library.rental : 도서 대여, 반납
+```java
+// 도서 대여
+	public abstract void rentBook(Book book);
+	
+	// 도서 반납 
+	public abstract void returnBook(Book book);
+	
+	// 도서 검수
+	public abstract void checkingBook(Book book);
+	
+	// 도서 대기
+	public abstract void readyBook(Book book);
+```
 
 
 
