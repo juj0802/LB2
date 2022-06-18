@@ -6,8 +6,18 @@ package com.codefty.library.common;
  * @author LEE YONGGYO
  */
 public enum RentalStatus {
-	READY,
-	RENTAL,
-	RETURN ,
-	CHECKING,
+	READY("대기"),
+	RENTAL("대여"),
+	RETURN("반납") ,
+	CHECKING("검수");
+	
+	protected final String  statusStr;
+	
+	RentalStatus(String statusStr) {
+		this.statusStr = statusStr;
+	}
+	
+	public String getStatusStr() {
+		return statusStr;
+	}
 }

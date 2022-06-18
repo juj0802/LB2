@@ -1,8 +1,9 @@
 package com.codefty.library.book;
 
+import java.io.Serializable;
 import com.codefty.library.common.RentalStatus;
 
-public class Book {
+public class Book implements Serializable {
 	
 	private long serialNum; // 도서 일련 번호
 	private String bookTitle;  // 도서 제목 
@@ -10,6 +11,10 @@ public class Book {
 	private String publisher; // 출판사 
 	private int rentalDays; // 도서 대여 가능일
 	private RentalStatus status; // 도서 대여 상태 
+	
+	public Book(long serialNum, String bookTitle, String author, String publisher, int rentalDays) {
+		this(serialNum, bookTitle, author, publisher, rentalDays, RentalStatus.READY);
+	}
 	
 	public Book(long serialNum, String bookTitle, String author, String publisher, int rentalDays,
 			RentalStatus status) {
